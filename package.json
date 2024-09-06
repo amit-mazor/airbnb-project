@@ -1,0 +1,20 @@
+{
+  "name": "airbnb-project",
+  "version": "1.0.0",
+  "description": "Airbnb Project for managing apartments, sellers, and customers ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amit-mazor/airbnb-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amit-mazor/airbnb-project/issues"
+  },
+  "homepage": "https://github.com/amit-mazor/airbnb-project#readme"
+}
