@@ -1,8 +1,3 @@
 # airbnb-project
 airbnb project
-
-
-
-
-
  
