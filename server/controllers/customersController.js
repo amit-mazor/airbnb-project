@@ -1,9 +1,9 @@
-const customerService = require('../services/customerService'); // Import the customer service
+const customersService = require('../services/customersService'); // Import the customer service
 
 // Get all customers
 exports.get = async (req, res) => {
   try {
-    const customers = await customerService.getAllCustomers(); // Use the service method
+    const customers = await customersService.getAllCustomers(); // Use the service method
     res.json(customers);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -13,7 +13,7 @@ exports.get = async (req, res) => {
 // Get a customer by ID
 exports.getId = async (req, res) => {
   try {
-    const customer = await customerService.getCustomerById(req.params.id); // Use the service method
+    const customer = await customersService.getCustomerById(req.params.id); // Use the service method
     if (customer) {
       res.json(customer);
     } else {
@@ -27,7 +27,7 @@ exports.getId = async (req, res) => {
 // Create a new customer
 exports.create = async (req, res) => {
   try {
-    const newCustomer = await customerService.createCustomer(req.body); // Use the service method
+    const newCustomer = await customersService.createCustomer(req.body); // Use the service method
     res.status(201).json(newCustomer);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -37,7 +37,7 @@ exports.create = async (req, res) => {
 // Update a customer by ID
 exports.update = async (req, res) => {
   try {
-    const updatedCustomer = await customerService.updateCustomer(req.params.id, req.body); // Use the service method
+    const updatedCustomer = await customersService.updateCustomer(req.params.id, req.body); // Use the service method
     if (updatedCustomer) {
       res.json(updatedCustomer);
     } else {
@@ -51,7 +51,7 @@ exports.update = async (req, res) => {
 // Delete a customer by ID
 exports.delete = async (req, res) => {
   try {
-    const deletedCustomer = await customerService.deleteCustomer(req.params.id); // Use the service method
+    const deletedCustomer = await customersService.deleteCustomer(req.params.id); // Use the service method
     if (deletedCustomer) {
       res.json({ message: 'Customer deleted successfully' });
     } else {
