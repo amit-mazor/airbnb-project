@@ -31,7 +31,7 @@ exports.createCustomer = async (customerData) => {
 // Update a customer by ID
 exports.updateCustomer = async (id, updateData) => {
   try {
-    return await Customers.findByIdAndUpdate(id, updateData, { new: true }); // Update the customer
+    return await Customers.findByIdAndUpdate(id, updateData, { new: true }); // Update the customer and return the updated document from mongo
   } catch (err) {
     throw new Error('Error updating customer');
   }
