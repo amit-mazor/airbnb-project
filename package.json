@@ -18,6 +18,16 @@
   },
   "homepage": "https://github.com/amit-mazor/airbnb-project#readme",
   "dependencies": {
-    "mongoose": "^8.6.1"
+    "bcryptjs": "^2.4.3",
+    "custom-env": "^2.0.6",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.6.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.3",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
   }
 }
