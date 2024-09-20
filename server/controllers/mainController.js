@@ -1,0 +1,5 @@
+exports.getMain = (req, res, next) => {
+  res.render('index', {
+    pageTitle: 'Main Page'
+  });
+};
