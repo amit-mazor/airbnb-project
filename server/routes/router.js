@@ -1,15 +1,39 @@
 const express = require('express');
-const router = express.Router();
+
+const route = express.Router();
 //const customersController = require('../controllers/customersController');
 const mainController = require('../controllers/mainController');
+const apartmentsController = require('../controllers/apartmentsController');
+const hostController = require('../controllers/hostController');  
 //main
-router.get('/', mainController.getMain);
-// Customers
-router.get('/api/customers', customersController.get);
+route.get('/', mainController.getMain);
+
 /*
-router.get('/api/customers/:id', customersController.getId);
-router.post('/api/customers/:id', customersController.update);
-router.post('/api/customers', customersController.create);
-router.delete('/api/customers/:id', customersController.delete);
+// Customers
+route.get('/api/customers/:id', customersController.getId);
+route.get('/api/customers', customersController.get);
+route.post('/api/customers/:id', customersController.update);
+route.post('/api/customers', customersController.create);
+route.delete('/api/customers/:id', customersController.delete);
+
+
+// Apartments
+route.get('/api/apartments/:id', apartmentsController.getApartmentId); // Get a specific Apartment by ID
+route.get('/api/apartments', apartmentsController.getApartments); // List all apartments
+route.post('/api/apartments/:id', apartmentsController.updateApartment); // Update a specific apartment by ID
+route.post('/api/apartments', apartmentsController.createApartment); // Create a new apartment
+route.delete('/api/apartments/:id', apartmentsController.deleteApartment); // Delete a specific apartment by ID
+
+
+// Hosts routes
+route.get('/api/hosts/:id', hostController.getHostById);  // Get a specific host by ID
+route.get('/api/hosts', hostController.listHosts);        // List all hosts
+route.post('/api/hosts/:id', hostController.updateHost);  // Update a specific host by ID
+route.post('/api/hosts', hostController.createHost);      // Create a new host
+route.delete('/api/hosts/:id', hostController.deleteHost);  // Delete a specific host by ID
 */
-module.exports = router;
+
+module.exports = route;
+
+
+
