@@ -33,7 +33,7 @@ function createCustomer(req,res) {
   const isCreated = customersModel.newCustomer(id, name, phone, country);
   if (isCreated) {
     const newCustomer = { id, name, phone, country };
-    res.status(201).json(newCustomer); // Return the newly created customer with 201 status
+    res.status(201).json(newCustomer);
   } else {
     res.status(400).send("Invalid customer data.");
   }
