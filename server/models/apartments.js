@@ -1,53 +1,55 @@
-// The apartments model includes fields that represent apartment attributes and methods to interact and query data.
-// It represents the structure of the data and how it will be stored and interacted with the mongo database.
-
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-// Define the apartment schema
-const apartmentSchema = new Schema({
-  Name: {
-    type: String,
-    required: true
+const apartments = [
+  {
+    "id": 12345,
+    "country": "Italy",
+    "city": "Rome",
+    "address": "newTown 5",
+    "size": "50",
+    "bedrooms": "2",
+    "host": "Ron Levi"
   },
-  Location: {
-    type: String,
-    required: true
-  },
-  Price: {
-    type: Number,
-    required: true,
-  },
-  Size: {
-    type: Number,
-    required: true
-  },
-  Bedrooms: {
-    type: Number,
-    required: true,
-    default: true
-  },
-});
+  {
+    "id": 67890,
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "address": "hashalom 5",
+    "size": "50",
+    "bedrooms": "3",
+    "host": "Nave Cahen"
+  }
+]
 
-// Static methods are used for querying the database or performing operations that don't involve a specific document instance.
-// Static method to find a apartment by Location
-apartmentSchema.statics.findByLocation = function(Location) {
-    return this.findOne({ Location: Location }); // search query
-};
-  
-// Static method to find all apartments
-apartmentSchema.statics.findAll = function() {
-    return this.find({}); // search query
-};
+function getAllApartments() {
+  return apartments
+}
 
-// Instance methods are called on individual document instances. These are useful for methods that operate on specific documents (mongo documents)
-// Instance method to update the price
-apartmentSchema.methods.updatePrice = function(newPrice) {
-    this.Price = newPrice;
-    return this.save();
-};
+function getApartment(id) {
+  return apartments.filter(apartment => apartments.id == id)[0]
+}
 
-// Create the model from the schema
-const Apartment = mongoose.model('Apartment', apartmentSchema);
+function deleteApartment (id) {
+  const apartmentToDelete = apartments.findIndex(apartment => apartment.id == id)
+  if (apartmentToDelete !== -1) {
+    apartments.splice(apartmentToDelete, 1);
+    return true;
+  }
+  return false;
+}
 
-module.exports = Apartment;
+function newApartment(id, country, city, address, size, bedroom, host) {
+  if (country && city && address && size && bedroom && host) {
+    const apartment = { id, country, city, address, size, bedroom, host };
+    apartments.push(apartment);
+    return true;
+  } else {
+    console.error('Invalid apartment data:', { id, country, city, address, size, bedroom, host });
+    return false;
+  }
+}
+
+module.exports = {
+  getAllApartments,
+  getApartment,
+  deleteApartment,
+  newApartment
+}
