@@ -1,54 +1,49 @@
-// The customers model includes fields that represent customer attributes and methods to interact and query data.
-// It represents the structure of the data and how it will be stored and interacted with the mongo database.
-
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-// Define the customer schema
-const customerSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true
+const customers = [
+  {
+    "id": 12345,
+    "name": "Amit Mazor",
+    "phone": "0525602589",
+    "country": "Israel",
   },
-  lastName: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    match: /.+\@.+\..+/ // Simple email validation
-  },
-  passwordHash: {
-    type: String,
-    required: true
-  },
-  phone: {
-    type: String,
-    required: false
-  },
-});
+  {
+    "id": 67890,
+    "name": "Noa Cohen",
+    "phone": "0545602189",
+    "country": "France",
+  }
+]
 
-// Static methods are used for querying the database or performing operations that don't involve a specific document instance.
-// Static method to find a customer by email
-customerSchema.statics.findByEmail = function(email) {
-    return this.findOne({ email: email }); // search query
-};
-  
-// Static method to find all customers
-customerSchema.statics.findAll = function() {
-    return this.find({}); // search query
-};
+function getAllCustomers() {
+  return customers
+}
 
-// Instance methods are called on individual document instances. These are useful for methods that operate on specific documents (mongo documents)
-// Instance method to update the phone number
-customerSchema.methods.updatePhone = function(newPhone) {
-    this.phone = newPhone;
-    return this.save();
-};
+function getCustomer(id) {
+  return customers.filter(customer => customer.id == id)[0]
+}
 
-// Create the model from the schema
-const Customer = mongoose.model('Customer', customerSchema);
+function deleteCustomer(id) {
+  const customerToDelete = customers.findIndex(customer => customer.id == id)
+  if (customerToDelete !== -1) {
+    customers.splice(customerToDelete, 1);
+    return true;
+  }
+  return false;
+}
 
-module.exports = Customer;
+function newCustomer(id, name, phone, country) {
+  if (name && phone && country) {
+    const customer = { id, name, phone, country };
+    customers.push(customer);
+    return true;
+  } else {
+    console.error('Invalid customer data:', { id, name, phone, country });
+    return false;
+  }
+}
+
+module.exports = {
+  getAllCustomers,
+  getCustomer,
+  deleteCustomer,
+  newCustomer,
+}
