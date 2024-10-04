@@ -9,13 +9,12 @@ const server = express();
 // Connect to MongoDB Atlas
 connectDB()
 
-server.use(express.static('public'))
-
+server.use(express.static('public'))    
 server.use(express.json())
 
-server.use('/', customers)
-server.use('/', hosts)
-server.use('/', apartments)
-
+// Use the routes for different entities
+server.use('/customers', customers);
+server.use('/hosts', hosts);
+server.use('/apartments', apartments);
 
 server.listen(8080)

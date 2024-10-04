@@ -1,6 +1,8 @@
+// db.js
 const mongoose = require('mongoose');
 
-const uri = 'mongodb+srv://eshelrony:AirbnbAdminPass123.ijwbm.mongodb.net/airbnbDB?retryWrites=true&w=majority';
+// MongoDB Atlas connection string with the correct database name
+const uri = 'mongodb+srv://eshelrony:AirbnbAdminPass123@cluster0.ijwbm.mongodb.net/airbnbDB?retryWrites=true&w=majority';
 
 const connectDB = async () => {
   try {

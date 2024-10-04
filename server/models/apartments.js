@@ -1,55 +1,15 @@
-const apartments = [
-  {
-    "id": 12345,
-    "country": "Italy",
-    "city": "Rome",
-    "address": "newTown 5",
-    "size": "50",
-    "bedrooms": "2",
-    "host": "Ron Levi"
-  },
-  {
-    "id": 67890,
-    "country": "Israel",
-    "city": "Tel Aviv",
-    "address": "hashalom 5",
-    "size": "50",
-    "bedrooms": "3",
-    "host": "Nave Cahen"
-  }
-]
+// server/models/apartments.js
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-function getAllApartments() {
-  return apartments
-}
+const apartmentSchema = new Schema({
+  id: { type: Number, required: true, unique: true },
+  country: { type: String, required: true },
+  city: { type: String, required: true },
+  address: { type: String, required: true },
+  size: { type: Number, required: true },
+  bedrooms: { type: Number, required: true },
+  host: { type: String, required: true } // Host reference
+});
 
-function getApartment(id) {
-  return apartments.filter(apartment => apartments.id == id)[0]
-}
-
-function deleteApartment (id) {
-  const apartmentToDelete = apartments.findIndex(apartment => apartment.id == id)
-  if (apartmentToDelete !== -1) {
-    apartments.splice(apartmentToDelete, 1);
-    return true;
-  }
-  return false;
-}
-
-function newApartment(id, country, city, address, size, bedroom, host) {
-  if (country && city && address && size && bedroom && host) {
-    const apartment = { id, country, city, address, size, bedroom, host };
-    apartments.push(apartment);
-    return true;
-  } else {
-    console.error('Invalid apartment data:', { id, country, city, address, size, bedroom, host });
-    return false;
-  }
-}
-
-module.exports = {
-  getAllApartments,
-  getApartment,
-  deleteApartment,
-  newApartment
-}
+module.exports = mongoose.model('Apartment', apartmentSchema);
