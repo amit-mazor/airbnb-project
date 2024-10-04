@@ -3,13 +3,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const apartmentSchema = new Schema({
-  id: { type: Number, required: true, unique: true },
-  country: { type: String, required: true },
-  city: { type: String, required: true },
-  address: { type: String, required: true },
-  size: { type: Number, required: true },
-  bedrooms: { type: Number, required: true },
-  host: { type: String, required: true } // Host reference
+  Name: { type: String, required: true },
+  Id: { type: String, required: true },
+  Country: { type: String, required: true },
+  City: { type: String, required: true },
+  Location: { type: String, required: true },
+  Price: { type: Number, required: true },
+  Size: { type: Number, required: true  },
+  Bedrooms: { type: Number, required: true },
+  Host: { type: String, required: true }
 });
+
 
 module.exports = mongoose.model('Apartment', apartmentSchema);
