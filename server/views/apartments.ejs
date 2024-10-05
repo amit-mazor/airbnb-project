@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb Apartments</title>
+  <link rel="stylesheet" href="/style.css"> <!-- Link your CSS -->
+</head>
+<body>
+  <h1>Available Apartments</h1>
+  <div class="apartment-list">
+    <% apartments.forEach(apartment => { %>
+      <div class="apartment-card">
+        <h2><%= apartment.Name %></h2>
+        <p><strong>Location:</strong> <%= apartment.Location %></p>
+        <p><strong>Price:</strong> $<%= apartment.Price %></p>
+        <p><strong>Size:</strong> <%= apartment.Size %> sqm</p>
+        <p><strong>Bedrooms:</strong> <%= apartment.Bedrooms %></p>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
