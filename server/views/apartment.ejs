@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OurBnb</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" >
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdtGPc2gg0Wh8UWRWDGDy8ChwLNyB5DnI"></script>
+        <link href="https://a0.muscache.com/airbnb/static/packages/common_o2.1-d39fc73696664916e1df691e17630bbb.css" media="all" rel="stylesheet" type="text/css">
+        <script src="https://use.fontawesome.com/de6a9ddb3d.js"></script>
+        <script>
+            function initialize() {
+            var mapProp = {
+                center:new google.maps.LatLng(<%=apartment.location.coordinates.lat%>,<%=apartment.location.coordinates.lng%>),
+                zoom:10,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </head>
+<body>
+<%- include('includes/header') %>
+    <main>
+        <% if (apartment.id != '') { %>
+            <div class="LocationPage">
+                <div class="ImageJumbotron">
+                    <img src="<%=apartment.imageUrl%>" alt="" class="PageImage" />
+                </div>
+                <div class="PageContainer">
+                    <div class="Details" id="Overview">
+                        <div class="LocationNav">
+                            <ul class="LocationNavUl">
+                                <li><a href="#Overview">Overview</a></li>
+                                <li><a href="#Location">Location</a></li>
+                                <li><a href="#Reviews">Reviews</a></li>
+                            </ul>
+                        </div>
+                        <div class="PageHeader">
+                            <h1 class="LocationPageName"><%=apartment.title%></h1>
+                            <a class="headerLink" href="#Location">
+                                <%=apartment.location.city%> ,<%=apartment.location.country%>
+                            </a>
+                            <a class="headerLink" href="#Reviews">
+                                <div class="Rating">
+                                    <i class="fa fa-star-o" aria-hidden="true" ></i>
+                                    <i class="fa fa-star-o" aria-hidden="true" ></i>
+                                    <i class="fa fa-star-o" aria-hidden="true" ></i>
+                                    <i class="fa fa-star-o" aria-hidden="true" ></i>
+                                    <i class="fa fa-star-o" aria-hidden="true" ></i>
+                                </div>
+                                12 reviews
+                            </a>
+                        </div>
+                        <div class="LocationFeatures">
+                            <div class="LocationFeature"><i class="icon icon-group icon-size" aria-hidden="true" data-reactid="268"></i><br/><%=apartment.maxGuests%>  Guests</div>
+                            <div class="LocationFeature"><i class="icon icon-rooms icon-size" aria-hidden="true" data-reactid="272"></i><br/><%=apartment.bedrooms%> Bedrooms</div>
+                            <div class="LocationFeature"><i class="icon icon-double-bed icon-size" aria-hidden="true" data-reactid="276"></i><br/><%=apartment.beds%> Beds</div>
+                        </div>
+                        <div class="AboutLocation">
+                            <h3>About this listing</h3>
+                            <%=apartment.description%>
+                        </div>
+                        <div id="Location" class="LocationMap">
+                            <h2>Location</h2>
+                            <div id="googleMap" style="width:500px;height:380px;"></div>
+                        </div>
+                    </div>
+                    <div class="Booking">
+                        <div class="BookHead"><span class="theprice">$<%=apartment.price%></span> per night </div>
+                        <form onSubmit=''>
+                            <div class="BookBody">
+                                <div class="CheckInBook">
+                                    <label>Check In</label>
+                                    <input required type="date" min=<%=minDate%> onChange='' />
+        
+                                </div>
+                                <div class="CheckOutBook">
+                                    <label>Check Out</label>
+                                    <input required type="date" min=<%=minDate%> onChange='' />
+        
+                                </div>
+                                <div class="GuestsBook">
+                                    <label>Guests</label>
+                                    <input required type="number" min=1 max=<%=apartment.maxGuests%> />
+                                </div>
+                            </div>
+                            <div class="BookBottom">
+                                <input type="submit" value="Request To Book" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <%} else {%>
+                <p>
+                    This apartment does not exist
+                </p>
+        <% } %>
+    </main>
+<%- include('includes/footer') %>
+</body>
+</html>

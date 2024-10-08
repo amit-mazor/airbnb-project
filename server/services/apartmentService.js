@@ -2,13 +2,18 @@
 const Apartment = require('../models/apartment');
 
 const getAll = async (query) => {
-  const { city, price, guests } = query;
   const filter = {};
-  if (city) filter['location.city'] = city;
-  if (price) filter.price = { $lte: price };
-  if (guests) filter.maxGuests = { $gte: guests };
+  if(query){
+    const { city, price, guests } = query;
+    if (city) filter['location.city'] = city;
+    if (price) filter.price = { $lte: price };
+    if (guests) filter.maxGuests = { $gte: guests };
+  } 
   return Apartment.find(filter);
 };
+const getApartmentById = async (id) => {
+  return Apartment.findById(id); 
+}
 
 const create = async (data) => {
   const newApartment = new Apartment(data);
@@ -25,6 +30,7 @@ const deleteApartment = async (id) => {
 
 module.exports = {
   getAll,
+  getApartmentById,
   create,
   update,
   delete: deleteApartment

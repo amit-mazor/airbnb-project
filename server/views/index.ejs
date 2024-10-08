@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OurBnb</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" >
+    </head>
+    <body>
+        <%- include('includes/header') %>
+        <header>
+            <div class="welcome">
+                <h1>Looking For Your Next Adventure?</h1>
+            </div>  
+            <div class="searchContainer">
+                <div class="searchbar">
+                    <div class="SubSearch">
+                        <input type="search" class="searchbox"
+                            placeholder="City Name"/>
+                    </div>
+                    <div class="SubSearch">
+                        <input type="number" min="0" class="searchbox"
+                            placeholder="Number Of Guests"/>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="myContainer">
+                <div class="apartments">
+                    <% if (apartmentList.length > 0) { %>
+                        <div class="gallery">
+                            <% for (let apartment of apartmentList) { %>
+                                
+                                <div class="imghold overflows">
+                                    <a href=<%="/apartment/" + apartment.id %>>
+                                        <img src="<%=apartment.imageUrl%>" alt="" class="listimage " />
+                                    </a>
+                                    <div class="picdescription">
+                                        <div class="locationName"> 
+                                            $<%=apartment.price%> - <%=apartment.title%>
+                                        </div>
+                                        <div class="city">
+                                            <%=apartment.location.city%>,<%=apartment.location.country %>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                    <% } else { %>
+                        <h1>No Products Found!</h1>
+                    <% } %>
+                </div>
+        </main>
+        <%- include('includes/footer') %>
+    </body>
+</html>
