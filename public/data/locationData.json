@@ -1,0 +1,360 @@
+{
+        "id": 101,
+        "name": "Swaniawski-Berge",
+        "price": 366,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Japan",
+            "city":"Tokyo",
+            "coordinates":{
+                "lng":139.726215,
+                "lat":35.712176
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=large",
+        "maxGuests": 4
+    },
+    {
+        "id": 102,
+        "name": "Stokes Inc",
+        "price": 106,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Japan",
+            "city":"Kyoto",
+            "coordinates":{
+                "lng":135.7680,
+                "lat":35.0116
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/49398520/a3b3f151_original.jpg?aki_policy=xx_large",
+        "maxGuests": 1,
+    },
+    {
+        "id": 103,
+        "name": "Wunsch-Crןemin",
+        "price": 371,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Spain",
+            "city":"Barcelona",
+            "coordinates":{
+                "lng":2.1734,
+                "lat":41.3851
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/1faf9a4c-f839-44da-bd37-65ddc928379e.jpg?aki_policy=xx_large",
+        "maxGuests": 3
+    },
+    {
+        "id": 104,
+        "name": "McDermott and Sons",
+        "price": 146,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Japan",
+            "city":"Tokyo",
+            "coordinates":{
+                "lng":139.726215,
+                "lat":35.712176
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/42492006/d656f7da_original.jpg?aki_policy=xx_large",
+        "maxGuests": 4
+    },
+    {
+        "id": 105,
+        "name": "Hilll Group",
+        "price": 303,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Japan",
+            "city":"Kyoto",
+            "coordinates":{
+                "lng":135.7680,
+                "lat":35.0116
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/140333/3ab8f121_original.jpg?aki_policy=xx_large",
+        "maxGuests": 3
+    },
+    {
+        "id": 106,
+        "name": "Lubowitz and Sons",
+        "price": 205,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Spain",
+            "city":"Barcelona",
+            "coordinates":{
+                "lng":2.1734,
+                "lat":41.3851
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/26003118/06bf6fed_original.jpg?aki_policy=xx_large",
+        "maxGuests": 4
+    },
+    {
+        "id": 107,
+        "name": "Yundt-Russel",
+        "price": 332,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Spain",
+            "city":"Madrid",
+            "coordinates":{
+                "lng":-3.702204,
+                "lat":40.429507
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=xx_large",
+        "maxGuests": 3
+    },
+    {
+        "id": 108,
+        "name": "Collins Inc",
+        "price": 214,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Israel",
+            "city":"Tel Aviv",
+            "coordinates":{
+                "lng":34.788637,
+                "lat":32.086490
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/65441227/bb1eb2dd_original.jpg?aki_policy=xx_large",
+        "maxGuests": 1
+    },
+    {
+        "id": 109,
+        "name": "Emard-Heathcote",
+        "price": 328,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Israel",
+            "city":"Tel Aviv",
+            "coordinates":{
+                "lng":34.788637,
+                "lat":32.086490
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/52149945/33130c63_original.jpg?aki_policy=xx_large",
+        "maxGuests": 3
+    },
+    {
+        "id": 1010,
+        "name": "Predovic Group",
+        "price": 193,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Japan",
+            "city":"Kyoto",
+            "coordinates":{
+                "lng":135.7680,
+                "lat":35.0116
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/307a5575-c3a4-4b21-8127-a37875ec1239.jpg?aki_policy=xx_large",
+        "maxGuests": 1
+    },
+    {
+        "id": 1011,
+        "name": "Mohr,  Boehm and Brown",
+        "price": 247,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Spain",
+            "city":"Madrid",
+            "coordinates":{
+                "lng":-3.702204,
+                "lat":40.429507
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/21162888/5a0f1151_original.jpg?aki_policy=xx_large",
+        "maxGuests": 4
+    },
+    {
+        "id": 1012,
+        "name": "Oberbrunner-Zemlak",
+        "price": 382,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Israel",
+            "city":"Jerusalem",
+            "coordinates":{
+                "lng":35.234420,
+                "lat":31.776707
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/6722906/b4bc6418_original.jpg?aki_policy=xx_large",
+        "maxGuests": 3
+    },
+    {
+        "id": 1013,
+        "name": "McGlynn LLC",
+        "price": 179,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Japan",
+            "city":"Tokyo",
+            "coordinates":{
+                "lng":139.726215,
+                "lat":35.712176
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/51c82da7-bccc-4ec2-ab44-e5ca6278bd91.jpg?aki_policy=xx_large",
+        "maxGuests": 1
+    },
+    {
+        "id": 1014,
+        "name": "Nikolaus-Hermann",
+        "price": 477,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Israel",
+            "city":"Ramat Gan",
+            "coordinates":{
+                "lng":34.824993,
+                "lat":32.067581
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/23863364/b733008b_original.jpg?aki_policy=xx_large",
+        "maxGuests": 4
+    },
+    {
+        "id": 1015,
+        "name": "McCullough Group",
+        "price": 380,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Spain",
+            "city":"Madrid",
+            "coordinates":{
+                "lng":-3.702204,
+                "lat":40.429507
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/21703047/bbc33c97_original.jpg?aki_policy=xx_large",
+        "maxGuests": 3
+    },
+    {
+        "id": 1016,
+        "name": "Wintheiser,  Cronin and Roob",
+        "price": 230,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Japan",
+            "city":"Kyoto",
+            "coordinates":{
+                "lng":135.7680,
+                "lat":35.0116
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/35836380/a9a49e5f_original.jpg?aki_policy=xx_large",
+        "maxGuests": 2
+    },
+    {
+        "id": 1017,
+        "name": "Jakubowski-Durgan",
+        "price": 439,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Israel",
+            "city":"Tel Aviv",
+            "coordinates":{
+                "lng":34.788637,
+                "lat":32.086490
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/45655208/1ae646f5_original.jpg?aki_policy=xx_large",
+        "maxGuests": 1
+    },
+    {
+        "id": 1018,
+        "name": "Oberbrunner,  Yundt and Larson",
+        "price": 143,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Japan",
+            "city":"Tokyo",
+            "coordinates":{
+                "lng":139.726215,
+                "lat":35.712176
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/23884483/91d67209_original.jpg?aki_policy=xx_large",
+        "maxGuests": 1
+    },
+    {
+        "id": 1019,
+        "name": "Olson-Dickens",
+        "price": 190,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Spain",
+            "city":"Barcelona",
+            "coordinates":{
+                "lng":2.1734,
+                "lat":41.3851
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/25624825/6ef8e934_original.jpg?aki_policy=xx_large",
+        "maxGuests": 4
+    },
+    {
+        "id": 1020,
+        "name": "Herzog LLC",
+        "price": 481,
+        "description":"Spend a unforgettable holiday in the enchanting surroundings of the town of Cisternino (reachable from the near airports of Bari and Brindisi). Trullo Edera offers a heaven of peace and tranquillity, set in an elevated position with a stunning view. It's the perfect place if you like nature. You can stay under an olive tree reading a good book, you can have a walk in the small country streets or go to the nearest beaches. You can even easily visit any of the sights in Apulia such as the caves of Castellana, the trulli of Alberobello, the baroque cities of Lecce and Martina Franca, the excavations of Egnazia, the zoosafari of Fasano, Castel del Monte with Frederick's castle, Grottaglie famous for its ceramics, Taranto, Brindisi and Lecce museums. Prices vary on period and are to be considered included: in-outcoming cleanings, towels, sheets, water, gas, electricity. ",         
+        "bedrooms":2,
+        "beds":4,
+        "location":{
+            "country":"Israel",
+            "city":"Jerusalem",
+            "coordinates":{
+                "lng":35.234420,
+                "lat":31.776707
+            }
+        },
+        "imageUrl": "https://a0.muscache.com/im/pictures/45680811/f4987a12_original.jpg?aki_policy=xx_large",
+        "maxGuests": 4
+    }

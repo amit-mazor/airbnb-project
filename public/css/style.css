@@ -1,32 +1,461 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+@font-face {
+    font-family: myFont;
+    src: url('http://mysite.co.uk/clients/reload/Images/style_159306.eot');
+    src: url('http://mysite.co.uk/clients/reload/Images/style_159306.otf');
+    font-size: medium;
 }
-
-header {
-    background-color: #ff5a5f;
-    color: white;
-    padding: 10px 20px;
+*{
+    box-sizing: border-box;
+    margin:0;
+    font-family: myFont;
+}
+nav {
+    list-style: none outside;
+    position: relative;
+    width:100%;
+    margin:auto;
+    display: inline-block;
+}
+nav a{
+    float:right;
+}
+nav a {
+    display: inline-block;
+    color: inherit;
     text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline gray;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+.searchbox{
+    width: 100%;
+    padding:20px;
+}
+ .SubSearch{
+     width:50%;
+}
+.searchbar{
+    display: flex;
+    margin:auto;
+    width:850px;
+}
+.welcome{
+    display:block;
+    max-width:960px;
+    padding:15px;
+    font-size:30px;
+    margin:20px;
+    text-shadow: -2px 1px 4px gray;
 }
 
-nav ul li {
+.gallery {
+    width: 100%;
+}
+
+.imghold {
+    width: 30%;
+    display: inline-block;
+    padding: 15px;
+    text-align:left;
+}
+.listimage{
+    width:100%;
+    max-height:250px;
+}
+.listimage:hover{
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.picdescription{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@media only screen and (max-width: 960px) {
+    .searchbar {
+        width: 90%;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    font-family: Arial;
+    
+}
+.header {
+    width: 100%;
+    text-align:center;
+}
+.logo {
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+    top:5px;
+}  
+.thelogo{
+    width:35px;
+    padding:0;
+    position: relative;
+    top: 10px
+}
+ul.nav {
+    list-style: none outside;
+    position: relative;
+    width:100%;
+    margin:auto;
+    margin-left:10px;
+    display: inline-block;
+}
+ ul.nav li{
+    float:right;
+}
+ul.nav li a {
+    display: inline-block;
+    color: inherit;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+ul.nav li a:hover {
+    text-decoration: underline gray;
+}
+.welcome h1{
+    color:green;
     display: inline;
-    margin: 0 15px;
+    
 }
-
-h2 {
-    color: #333;
+.welcome{
+    display:block;
+    max-width:960px;
+    padding:15px;
+    font-size:30px;
+    margin:20px;
 }
-
-footer {
+.searchbox{
+    width: 100%;
+    padding:20px;
+}
+ .SubSearch{
+     width:50%;
+}
+.searchbar{
+    display: flex;
+    margin:auto;
+    width:850px;
+}
+.container{
+    text-align:center;
+}
+a{
+    color:inherit;
+}
+.gallery {
+    width: 100%;
+}
+.gallery h1{
+    text-align:left;
+    padding-top:10px;
+    padding-left:15px;
+    padding-bottom:10px;
+    font-size:25px;
+}
+.imghold {
+    width: 30%;
+    display: inline-block;
+    padding: 15px;
+    text-align:left;
+}
+.listimage{
+    width:100%;
+    max-height:250px;
+}
+.listimage:hover{
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.picdescription{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.locationName{
+    font-weight: bold;
+    width:100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin:5px;
+}
+.LocationPage:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+a.headerLink{
+    text-decoration: none;
+}
+.Rating{
+    margin-left:5px;
+    display: inline;
+    color:#f4bf42;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.Review .Rating{
+    float:left;
+}
+.Rating .fa-star-o{
+    color:black;
+    text-shadow: none;
+}
+.footer{
+    display:block;
+    width:100%;
+    padding:15px;
+}
+div.ImageJumbotron{
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+.PageContainer{
+    width:960px;
+    margin:auto;
+}
+.Details{
+    width:70%;
+    float:left;
+}
+.AboutLocation h3{
+    padding:20px;
+    padding-left:0;
+}
+.LocationMap{
+    margin-top:20px;
+    padding-top:5px;
+    border-top: gray 1px solid;
+    border-bottom: gray 1px solid;
+}
+.GoogleMap{
+    margin:auto;
+    margin-top: 15px;
+    margin-bottom:15px;
+    width: 500;
+    height: 300;
+    border: 1px solid black
+}
+.Author{
+    padding:5px;
+    line-height: 20px;
+    margin-bottom:20px;
+}
+.AuthorPic{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+  background: #000;
+  margin-right: 20px;
+  float:left;
+}
+.Booking{
+    width:30%;
+    display: inline-block;
+    height:500px;
+    border:1px solid gray;
+    position: relative;
+    top:-50px;
+}
+.Booking input{
+    padding-top:7px;
+    padding-bottom: 7px;
+    width:100%;
+}
+.BookHead{
+    background-color: rgba(0,0,0,0.8);
+    padding:7px;
+    color:white;
+}
+.BookHead .theprice{
+    font-weight: bold;
+    font-size:25px;
+}
+.BookBody{
+    padding:10px;
+}
+.BookBody .CheckInBook{
+    margin-top:7px;
+    width:45%;
+    display:inline-block;
+}
+.BookBody .CheckOutBook{
+    margin-top:7px;
+    width:45%;
+    display:inline-block;
+}
+.BookBody .GuestsBook{
+    margin-top:7px;
+}
+.BookBody .GuestsBook input{
+    width:100%;
+    display:inline-block;
+}
+.BookBottom{
+    text-align:center;
+}
+.BookBottom input{
+    width:70%;
+    padding:15px;
+}
+.LocationNav{
+    padding:15px;
+    padding-left:0;
+    font-size:18px;
+    border-bottom: gray 1px solid;
+}
+.LocationNavUl{
+    width:100%;
+    list-style-type: none;
+    padding-left:0;
+}
+.LocationNavUl li{
+    display:inline;
+    padding:0 30px 0 0;
+}
+.LocationNavUl li a{
+    text-decoration: none;
+}
+.LocationNavUl li a:hover{
+    color:slategray;
+    font-weight: bold;
+}
+.PageHeader{
+    padding:20px 0 20px 0;
+}
+img.PageImage{
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  margin:auto;
+  width:100%;
+}
+.LocationFeatures{
+    margin:15px 5px;
+    border-top: gray 1px solid;
+    border-bottom: gray 1px solid;
+    display: flex;
+    justify-content: space-around;
+}
+.LocationFeatures .LocationFeature{
+    width:33.333333%;
+    padding: 15px;
     text-align: center;
-    padding: 20px;
-    background-color: #f1f1f1;
+}
+.LocationFeature .icon{
+    font-size:30px;
+}
+.ReviewsHead{
+    padding:10px;
+    border-bottom: gray 1px solid;
+}
+.ReviewsHead h2{
+    display: inline;
+    font-size: 25px;
+}
+.Reviews{
+    display: block;
+}
+.Review{
+    border-bottom: gray 1px solid;
+    padding:15px;
+}
+.ReviewAuthor{
+    display: block;
+    font-size: 20px;
+    float:left;
+}
+.reviewCaption{
+    font-size:20px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+.Reservations{
+    width:70%;
+    margin:auto;
+}
+.Reservation{
+    display:flex;
+    padding:15px;
+    border:1px solid gray;
+}
+.reservationImg{
+    width:30%;
+    height:150px;
+}
+.reservationDetail{
+    margin-left:30px;
+}
+@media only screen and (max-width: 960px) {
+    .PageContainer{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .Details{
+        flex-basis:90%;
+    }
+    .Booking{
+        flex-basis:90%;
+        position:inherit;
+        height:auto;
+    }
+    .BookBody .GuestsBook input{
+        width:80%;
+        display:inline-block;
+    }
+    .BookBottom{
+        margin-bottom:10px;
+    }
+    .searchbar {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .gallery{
+        width:100%;
+    }
+    .imghold {
+        width: 49%;
+    }
+    .imghold .overflows{
+        display: none;
+    }
+}
+@media only screen and (max-width: 520px) {
+    ul.nav {
+            width: 100%;
+     }
+
+    ul.nav li {
+            display: block;
+            text-align: center;
+            float: none;
+    }
+    .welcome {
+            font-size: 20px;
+    }
+
+
 }

@@ -1,5 +1,4 @@
 // server/routes/authRoutes.js
-
 const express = require('express');
 const { check } = require('express-validator');
 const { signUp, signIn } = require('../controllers/authController');

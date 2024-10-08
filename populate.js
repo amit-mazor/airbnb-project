@@ -15,7 +15,8 @@ mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
 const createUsers = async () => {
   await User.create([
     { username: 'john_doe', email: 'john@example.com', password: '1234', firstName: 'John', lastName: 'Doe', isHost: true },
-    { username: 'jane_doe', email: 'jane@example.com', password: '1234', firstName: 'Jane', lastName: 'Doe' }
+    { username: 'jane_doe', email: 'jane@example.com', password: '1234', firstName: 'Jane', lastName: 'Doe' },
+    { username: 'josh_doe', email: 'josh@example.com', password: '1234', firstName: 'Josh', lastName: 'Doe',isAdmin:true }
   ]);
   console.log('Users created');
 };

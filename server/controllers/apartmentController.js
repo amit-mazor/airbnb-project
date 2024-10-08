@@ -10,6 +10,17 @@ const getAllApartments = async (req, res) => {
   }
 };
 
+const getApartmentById = async (req, res) => {
+  console.log(req)
+  try {
+    const apartments = await apartmentService.getApartmentById(req.params.id);
+    res.status(200).json(apartments);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+
 const createApartment = async (req, res) => {
   try {
     const newApartment = await apartmentService.create(req.body);
@@ -41,5 +52,6 @@ module.exports = {
   getAllApartments,
   createApartment,
   updateApartment,
-  deleteApartment
+  deleteApartment,
+  getApartmentById
 };

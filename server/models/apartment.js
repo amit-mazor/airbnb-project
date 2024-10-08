@@ -5,7 +5,7 @@ const apartmentSchema = new mongoose.Schema({
   description: { type: String, required: true },
   price: { type: Number, required: true },
   host: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  image: { type: String, required: true },
+  imageUrl: { type: String, required: true },
   availableFrom: { type: Date, required: true },
   availableTo: { type: Date, required: true },
   location: {
