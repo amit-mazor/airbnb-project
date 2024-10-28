@@ -6,6 +6,7 @@ const { validationResult } = require('express-validator');
 // Controller for user registration
 const signUp = async (req, res) => {
   // Validate input data
+  console.log(req);
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -31,9 +32,10 @@ const signIn = async (req, res) => {
 
   try {
     const token = await loginUser(email, password);
-    res.status(200).json({ message: 'User logged in successfully', token });
+    req.session.user=email;
+    res.redirect('/');
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.redirect('/error');
   }
 };
 
