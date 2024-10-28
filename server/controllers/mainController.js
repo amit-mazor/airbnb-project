@@ -1,6 +1,7 @@
 const apartmentsModel = require('../services/apartmentService')
 exports.getMain = (req, res, next) => {
     apartmentsModel.getAll().then(result=>{
+      console.log(req);
         res.render('index', {
           pageTitle: 'Main Page',
           apartmentList:  result
@@ -24,4 +25,10 @@ exports.getLogin = (req, res, next) => {
       pageTitle: 'Registration Page'
     });
 }
+exports.getError = (req, res, next) => {
+  res.render('error', {
+    pageTitle: 'Error Page'
+  });
+}
+  
     

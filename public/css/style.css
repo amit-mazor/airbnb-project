@@ -9,12 +9,16 @@
     margin:0;
     font-family: myFont;
 }
+body {
+    background-color: #f0f4f8;
+}
 nav {
     list-style: none outside;
     position: relative;
     width:100%;
     margin:auto;
     display: inline-block;
+    background-color: white;
 }
 nav a{
     float:right;
@@ -406,6 +410,59 @@ img.PageImage{
 .reservationDetail{
     margin-left:30px;
 }
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Login form container styling */
+.formContainer .loginForm {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Form title */
+.loginForm h2 {
+    color: 4CAF50; /* Green accent for title */
+    margin-bottom: 1.5rem;
+}
+
+/* Input field styling */
+.loginForm input[type="email"],
+.loginForm input[type="password"],
+.loginForm input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.loginForm .formButton {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: green;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.loginForm .formButton:hover {
+    background-color: #4CAF50;
+}
+
+
 @media only screen and (max-width: 960px) {
     .PageContainer{
         width:100%;

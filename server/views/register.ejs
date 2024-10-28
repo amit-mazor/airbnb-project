@@ -1,20 +1,22 @@
 <head></head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"> 
     <title>OurBnb</title>
 </head>
 <body>
     <%- include('includes/header') %>
-        <div class="registerContainer">
-            <form action="/userRegister" method="POST">
-                Username : 
-                <input type="text" name="username"/>      
-                Password : 
-                <input type="text" name="password"/>        
-                Email : 
-                <input type="text" name="email"/>
-                <input type="submit" value="Register"/>
-              </form>
+        <div class="formContainer">
+            <div class="loginForm">
+                <form action="/api/auth/signup" method="POST">
+                    <input type="text" placeholder="Username" name="username" id="username"/>      
+                    <input type="password" placeholder="Password" name="password" required/><br/>
+                    <input type="email" placeholder="Email" name="email" id="email" required/>
+                    <input type="text" placeholder="First Name" name="firstName" id="firstName"/>
+                    <input type="text" placeholder="Last Name"  name="lastName" id="lastName"/>
+                    <input type="submit"  class="formButton" value="Register"/>
+                  </form>
+            </div>
         </div>
     <%- include('includes/footer') %>
 </body>
