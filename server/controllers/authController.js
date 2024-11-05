@@ -31,11 +31,23 @@ const signIn = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const token = await loginUser(email, password);
-    req.session.user=email;
-    res.redirect('/');
+    // Get token and user details from loginUser function
+    const { token, user } = await loginUser(email, password);
+    
+    // Send existing user data along with the token
+    res.status(200).json({
+      message: 'User logged in successfully',
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+      },
+      token  // Add token below existing user data
+    });
   } catch (error) {
-    res.redirect('/error');
+    res.status(400).json({ message: error.message });
   }
 };
 

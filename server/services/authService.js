@@ -4,6 +4,14 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
+// Function to generate a JWT token
+const generateToken = (userId) => {
+  return jwt.sign({ id: userId }, process.env.JWT_SECRET, {
+    expiresIn: '4h',  // Token expires in 4 hours
+  });
+};
+
+// Service function for user registration
 const registerUser = async (userData) => {
   const { username, email, password, firstName, lastName } = userData;
 
@@ -22,6 +30,7 @@ const registerUser = async (userData) => {
   return generateToken(user._id);
 };
 
+// Service function for user login
 const loginUser = async (email, password) => {
   // Check if user exists
   const user = await User.findOne({ email });
@@ -35,14 +44,9 @@ const loginUser = async (email, password) => {
     throw new Error('Invalid email or password');
   }
 
-  return generateToken(user._id);
-};
-
-// Function to generate JWT token
-const generateToken = (userId) => {
-  return jwt.sign({ id: userId }, process.env.JWT_SECRET, {
-    expiresIn: '1h',  // Token expires in 1 hour
-  });
+  // Generate token and return both token and user data
+  const token = generateToken(user._id);
+  return { token, user };  // Include user data with the token
 };
 
 module.exports = { registerUser, loginUser };

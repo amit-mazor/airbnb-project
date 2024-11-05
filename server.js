@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static('public'))
+app.use(express.json());
 // Import route files
 const userRoutes = require('./server/routes/userRoutes');
 const apartmentRoutes = require('./server/routes/apartmentRoutes');
