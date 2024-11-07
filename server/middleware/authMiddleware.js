@@ -19,6 +19,11 @@ const protect = async (req, res, next) => {
       // Get user from the token and attach to req.user
       req.user = await User.findById(decoded.id).select('-password');
 
+      // Check if user is a host, and set isAdmin accordingly
+      if (req.user.isHost) {
+        req.user.isAdmin = true;
+      }
+
       next();
     } catch (error) {
       console.error('Authorization error:', error);

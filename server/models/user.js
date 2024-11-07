@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
   isHost: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
-  isAdmmin: { type: Boolean, default: false }
+  isAdmin: { type: Boolean, default: false }
 });
 
 // Middleware to hash password before saving to the database

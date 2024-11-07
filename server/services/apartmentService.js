@@ -1,5 +1,6 @@
 // services/apartmentService.js
 const Apartment = require('../models/apartment');
+const mongoose = require('mongoose');
 
 const getAll = async (query) => {
   const filter = {};
@@ -11,6 +12,7 @@ const getAll = async (query) => {
   } 
   return Apartment.find(filter);
 };
+
 const getApartmentById = async (id) => {
   return Apartment.findById(id); 
 }
@@ -28,10 +30,16 @@ const deleteApartment = async (id) => {
   return Apartment.findByIdAndDelete(id);
 };
 
+const getApartmentByHost = async (userId) => {
+  return await Apartment.find({ host: new mongoose.Types.ObjectId(userId) }).exec();
+}
+
+
 module.exports = {
   getAll,
   getApartmentById,
   create,
   update,
-  delete: deleteApartment
+  delete: deleteApartment,
+  getApartmentByHost
 };
