@@ -48,10 +48,20 @@ const deleteApartment = async (req, res) => {
   }
 };
 
+const getHostApartments = async (req, res) => {
+  try {
+    const hostApartments = await apartmentService.getApartmentByHost(req.params.username);
+    res.status(200).json(hostApartments);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
   getAllApartments,
   createApartment,
   updateApartment,
   deleteApartment,
-  getApartmentById
+  getApartmentById,
+  getHostApartments
 };
