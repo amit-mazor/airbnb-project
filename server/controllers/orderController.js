@@ -1,4 +1,6 @@
 // controllers/orderController.js
+
+const Order = require('../models/order'); // Ensure Order model is imported
 const orderService = require('../services/orderService');
 
 const getAllOrders = async (req, res) => {
@@ -12,7 +14,17 @@ const getAllOrders = async (req, res) => {
 
 const createOrder = async (req, res) => {
   try {
-    const newOrder = await orderService.create(req.body);
+    const { apartment, checkIn, checkOut, guests } = req.body;
+
+    // Automatically associate the order with the logged-in user's ID
+    const newOrder = await orderService.create({
+      user: req.user._id,  // Set the user to the logged-in user's ID
+      apartment,
+      checkIn,
+      checkOut,
+      guests
+    });
+
     res.status(201).json(newOrder);
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -37,9 +49,23 @@ const deleteOrder = async (req, res) => {
   }
 };
 
+// New function to get all orders for the logged-in user
+const getUserOrders = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Retrieve all orders associated with the logged-in user
+    const orders = await Order.find({ user: userId }).sort({ checkIn: 1 });
+    res.status(200).json(orders);
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving user orders: ' + error.message });
+  }
+};
+
 module.exports = {
   getAllOrders,
   createOrder,
+  getUserOrders,  // Export the new function
   updateOrder,
   deleteOrder
 };
