@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb Apartments</title>
+  <link rel="stylesheet" href="/css/style.css"> <!-- Link your CSS -->
+</head>
+<body>
+    <%- include('includes/header') %>
+
+    <div class="orders">
+      <h1>Your Orders</h1>
+    <% ordersList.forEach(order => { %>
+        <div class="order">
+          <img class="orderImg" src=<%= order.apartment.imageUrl%> />
+          <div class="orderDetails">
+              <div class="orderLocation orderDetail"><%= order.apartment.name%> </div>
+              <div class="orderStart orderDetail">Check In: <%= order.checkIn%></div>
+              <div class="orderEnd orderDetail">Check Out: <%= order.checkOut%> </div>
+              <div class="orderGuests orderDetail"><%= order.guests%> Guests </div>
+              <div class="orderTotal orderDetail">Total: $<%= order.totalPrice%> </div>
+          </div>
+      </div>
+    <% }) %>
+  </div>
+
+
+
+  <%- include('includes/footer') %>
+
+</body>
+</html>

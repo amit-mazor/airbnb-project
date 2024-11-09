@@ -4,10 +4,18 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose= require('mongoose');
 const cors = require('cors');
+const session = require('express-session');
+
+
 require('dotenv').config();
 
 const app = express();
 
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: false
+}));
 // Middleware
 app.use(cors());
 app.use(bodyParser.urlencoded({

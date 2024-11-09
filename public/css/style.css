@@ -394,20 +394,20 @@ img.PageImage{
     font-style: italic;
     margin-bottom: 5px;
 }
-.Reservations{
+.orders{
     width:70%;
     margin:auto;
 }
-.Reservation{
+.order{
     display:flex;
     padding:15px;
     border:1px solid gray;
 }
-.reservationImg{
+.orderImg{
     width:30%;
     height:150px;
 }
-.reservationDetail{
+.orderDetail{
     margin-left:30px;
 }
 

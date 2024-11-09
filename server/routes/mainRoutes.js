@@ -7,6 +7,7 @@ route.get('/apartment/:id', mainController.apartmentPage);
 route.get('/login', mainController.getLogin);
 route.get('/register', mainController.getRegister);
 route.get('/error', mainController.getError);
+route.get('/orders', mainController.getOrders);
 
 
 module.exports = route ;

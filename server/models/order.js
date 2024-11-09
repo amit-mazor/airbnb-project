@@ -8,6 +8,7 @@ const orderSchema = new mongoose.Schema({
   checkIn: { type: Date, required: true },
   checkOut: { type: Date, required: true },
   guests: { type: Number, required: true },
+  totalPrice: { type: Number, required: true },
   status: { type: String, enum: ['active', 'completed', 'cancelled'], default: 'active' },  // Track order status
   isHistory: { type: Boolean, default: false },  // Field to mark order as history
   createdAt: { type: Date, default: Date.now },

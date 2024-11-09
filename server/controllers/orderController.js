@@ -14,18 +14,24 @@ const getAllOrders = async (req, res) => {
 
 const createOrder = async (req, res) => {
   try {
-    const { apartment, checkIn, checkOut, guests } = req.body;
+    const { apartment, checkIn, checkOut, guests, apartmentPrice } = req.body;
+    if(!req.session.user) {
+      res.redirect('/login')
+    } else {   
+          // Automatically associate the order with the logged-in user's ID
 
-    // Automatically associate the order with the logged-in user's ID
-    const newOrder = await orderService.create({
-      user: req.user._id,  // Set the user to the logged-in user's ID
-      apartment,
-      checkIn,
-      checkOut,
-      guests
-    });
+          const newOrder = await orderService.create({
+            user: req.session.user._id,  // Set the user to the logged-in user's ID
+            apartment: apartment,
+            checkIn,
+            checkOut,
+            guests,
+            totalPrice: (new Date(checkOut)-new Date(checkIn)) / (1000 * 60 * 60 * 24)* Number(apartmentPrice)
+          });
+      
+          res.status(201).json(newOrder);
 
-    res.status(201).json(newOrder);
+    }
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

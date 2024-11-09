@@ -1,8 +1,14 @@
 <nav class="mainNav">
-    <a href="/hosts">Hosts</a>
-    <a href="/admin">Admin</a>
+    <% if (user ) { %>
+        <% if (user.isAdmin ) { %>
+            <a href="/admin">Admin</a>
+        <%}%>
+        <a href="/orders">Orders</a>
+    <%}%>
     <a href="/about">About</a>
-    <a href="/register">Register</a>
-    <a href="/login">Login</a>
+    <% if (!user) { %>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+    <%}%>
     <a href="/">Home</a>
 </nav>

@@ -14,9 +14,9 @@ const signUp = async (req, res) => {
 
   try {
     const token = await registerUser(req.body);
-    res.status(201).json({ message: 'User registered successfully', token });
+    res.status(201).redirect('/login');
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).redirect('/error');
   }
 };
 
@@ -25,7 +25,7 @@ const signIn = async (req, res) => {
   // Validate input data
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).redirect('/error')
   }
 
   const { email, password } = req.body;
@@ -33,21 +33,12 @@ const signIn = async (req, res) => {
   try {
     // Get token and user details from loginUser function
     const { token, user } = await loginUser(email, password);
-    
+    req.session.user=user;
+    req.session.token=token;
     // Send existing user data along with the token
-    res.status(200).json({
-      message: 'User logged in successfully',
-      user: {
-        id: user._id,
-        username: user.username,
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-      },
-      token  // Add token below existing user data
-    });
+    res.status(200).redirect('/');
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.redirect('/error');
   }
 };
 

@@ -37,7 +37,7 @@
                             </ul>
                         </div>
                         <div class="PageHeader">
-                            <h1 class="LocationPageName"><%=apartment.title%></h1>
+                            <h1 class="LocationPageName"><%=apartment.name%></h1>
                             <a class="headerLink" href="#Location">
                                 <%=apartment.location.city%> ,<%=apartment.location.country%>
                             </a>
@@ -68,22 +68,24 @@
                     </div>
                     <div class="Booking">
                         <div class="BookHead"><span class="theprice">$<%=apartment.price%></span> per night </div>
-                        <form onSubmit=''>
+                        <form  action="/api/orders" method="POST">
                             <div class="BookBody">
                                 <div class="CheckInBook">
                                     <label>Check In</label>
-                                    <input required type="date" min=<%=minDate%> onChange='' />
+                                    <input required type="date" name="checkIn" id="checkIn" min=<%=minDate%> onChange='' />
         
                                 </div>
                                 <div class="CheckOutBook">
                                     <label>Check Out</label>
-                                    <input required type="date" min=<%=minDate%> onChange='' />
+                                    <input required type="date" name="checkOut" id="checkOut" min=<%=minDate%> onChange='' />
         
                                 </div>
                                 <div class="GuestsBook">
                                     <label>Guests</label>
-                                    <input required type="number" min=1 max=<%=apartment.maxGuests%> />
+                                    <input required type="number" name="guests" id="guests" min=1 max=<%=apartment.maxGuests%> />
                                 </div>
+                                <input type="hidden" name="apartment" id="apartment" value=<%=apartment._id%>>
+                                <input type="hidden" name="apartmentPrice" id="apartmentPrice" value=<%=apartment.price%>>
                             </div>
                             <div class="BookBottom">
                                 <input type="submit" value="Request To Book" />

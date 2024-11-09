@@ -1,33 +1,48 @@
-const apartmentsModel = require('../services/apartmentService')
+const apartmentService = require('../services/apartmentService')
+const ordersService= require('../services/orderService')
 exports.getMain = (req, res, next) => {
-    apartmentsModel.getAll().then(result=>{
-      console.log(req);
+    apartmentService.getAll().then(result=>{
         res.render('index', {
           pageTitle: 'Main Page',
-          apartmentList:  result
+          apartmentList:  result,
+          user: req.session.user
         })});
     }
+    exports.getOrders = (req, res, next) => {
+      ordersService.getAll(req.session.user).then(result=>{
+          res.render('orders', {
+            ordersList:  result,
+            user: req.session.user
+          })});
+    }
+      
   exports.apartmentPage = (req, res, next) => {
-      apartmentsModel.getApartmentById(req.params.id).then(result=>{
+      apartmentService.getApartmentById(req.params.id).then(result=>{
           res.render('apartment', {
             pageTitle: 'Apartment',
             apartment:  result,
-            minDate: new Date()
+            minDate: new Date(),
+          user: req.session.user
           })});
       }
 exports.getLogin = (req, res, next) => {
       res.render('login', {
-        pageTitle: 'Login Page'
+        pageTitle: 'Login Page',
+        user: req.session.user
+
       });
   }
   exports.getRegister = (req, res, next) => {
     res.render('register', {
-      pageTitle: 'Registration Page'
+      pageTitle: 'Registration Page',
+      user: req.session.user
+
     });
 }
 exports.getError = (req, res, next) => {
   res.render('error', {
-    pageTitle: 'Error Page'
+    pageTitle: 'Error Page',
+    user: req.session.user
   });
 }
   

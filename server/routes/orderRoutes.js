@@ -9,7 +9,7 @@ const Order = require('../models/order'); // Ensure correct path to order model
 
 // Define routes for order CRUD operations
 router.get('/', orderController.getAllOrders);           // GET /api/orders - Get all orders
-router.post('/', protect, orderController.createOrder);   // POST /api/orders - Create a new order (protected)
+router.post('/', orderController.createOrder);   // POST /api/orders - Create a new order (protected)
 router.put('/:id', orderController.updateOrder);          // PUT /api/orders/:id - Update order by ID
 router.delete('/:id', orderController.deleteOrder);       // DELETE /api/orders/:id - Delete order by ID
 

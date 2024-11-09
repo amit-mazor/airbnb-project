@@ -9,7 +9,10 @@
         <%- include('includes/header') %>
         <header>
             <div class="welcome">
-                <h1>Looking For Your Next Adventure?</h1>
+                <h1><% if (user) { %>
+                    <%=user.firstName%>,
+                    <% }%>
+                    Looking For Your Next Adventure?</h1>
             </div>  
             <div class="searchContainer">
                 <div class="searchbar">
@@ -36,7 +39,7 @@
                                     </a>
                                     <div class="picdescription">
                                         <div class="locationName"> 
-                                            $<%=apartment.price%> - <%=apartment.title%>
+                                            $<%=apartment.price%> - <%=apartment.name%>
                                         </div>
                                         <div class="city">
                                             <%=apartment.location.city%>,<%=apartment.location.country %>
