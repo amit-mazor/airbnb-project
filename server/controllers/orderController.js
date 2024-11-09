@@ -29,7 +29,7 @@ const createOrder = async (req, res) => {
             totalPrice: (new Date(checkOut)-new Date(checkIn)) / (1000 * 60 * 60 * 24)* Number(apartmentPrice)
           });
       
-          res.status(201).json(newOrder);
+          res.status(201).redirect('/orders');
 
     }
   } catch (error) {
@@ -62,7 +62,7 @@ const getUserOrders = async (req, res) => {
 
     // Retrieve all orders associated with the logged-in user
     const orders = await Order.find({ user: userId }).sort({ checkIn: 1 });
-    res.status(200).json(orders);
+    res.status(200).redirect(orders);
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving user orders: ' + error.message });
   }
