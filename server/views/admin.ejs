@@ -38,6 +38,7 @@
                         <th>Location</th>
                         <th>Price per Night</th>
                         <th>Max Guests</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="listingsTableBody">
@@ -47,8 +48,11 @@
                             <td><%=apartment.location.city%> ,<%=apartment.location.country%></td>
                             <td><%=apartment.price%></td>
                             <td><%=apartment.maxGuests%></td>
+                            <td><form method="POST" action="/api/apartments/delete/<%=apartment.id%>" >
+                                <button type="submit">delete</button>
+                            </form></td>
                         </tr>
-                        <% } %>
+                        <%} %>
                     </tbody>
                 </table>
                 <br>
@@ -90,38 +94,9 @@
     <script>
         // Fetch data from the database and populate listings table
         $(document).ready(function () {
-            fetchListings();
             fetchListingsByCity();
         });
 
-        function fetchListings() {
-            $.ajax({
-                url: '/api/apartments',
-                method: 'GET',
-                success: function (data) {
-                    let listingsTableBody = $('#listingsTableBody');
-                    listingsTableBody.empty();
-                    data.forEach(function (apartment) {
-                        listingsTableBody.append(`
-                            <tr>
-                                <td>${apartment.name}</td>
-                                <td>${apartment.location.city}, ${apartment.location.country}</td>
-                                <td>$${apartment.price}</td>
-                                <td>${apartment.maxGuests}</td>
-                                <td>${apartment.status}</td>
-                                <td>
-                                    <button class="btn btn-edit"><i class="fas fa-edit"></i> Edit</button>
-                                    <button class="btn btn-delete" onclick="confirmDelete('${apartment._id}')"><i class="fas fa-trash"></i> Delete</button>
-                                </td>
-                            </tr>
-                        `);
-                    });
-                },
-                error: function (error) {
-                    console.error('Error fetching apartments:', error);
-                }
-            });
-        }
 
         function fetchListingsByCity() {
             $.ajax({
