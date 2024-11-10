@@ -8,6 +8,6 @@ route.get('/login', mainController.getLogin);
 route.get('/register', mainController.getRegister);
 route.get('/error', mainController.getError);
 route.get('/orders', mainController.getOrders);
-
+route.get('/admin', mainController.getAdmin);
 
 module.exports = route ;

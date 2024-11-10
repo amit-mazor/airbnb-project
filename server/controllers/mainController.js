@@ -45,5 +45,16 @@ exports.getError = (req, res, next) => {
     user: req.session.user
   });
 }
+exports.getAdmin = (req, res, next) => {
+  // Check if the user is an admin
+  if (req.session.user && req.session.user.isAdmin) {
+      res.render('admin', {
+          pageTitle: 'Admin Dashboard',
+          user: req.session.user
+      });
+  } else {
+      res.redirect('/error'); // Redirect to error page if not admin
+  }
+};
   
     
