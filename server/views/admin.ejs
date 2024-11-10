@@ -4,266 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/styles/admin.css"> <!-- Link to an external CSS file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Icons for buttons -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="/css/style.css" >
 
-        /* Header */
-        header {
-            background-color: #ffffff;
-            color: rgb(0, 36, 128);
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        header .logout, header .home {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-            margin-left: 10px;
-        }
-
-        header .home {
-            background-color: #00aab3;
-        }
-
-        header .logout:hover {
-            background-color: #45a049;
-            transform: scale(1.05);
-        }
-
-        header .home:hover {
-            background-color: #008f99;
-            transform: scale(1.05);
-        }
-
-        /* Sidebar */
-        .sidebar {
-            width: 250px;
-            background-color: #ffffff;
-            position: fixed;
-            top: 70px; /* Adjust to align under header */
-            padding-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            height: calc(100vh - 70px);
-        }
-
-        .sidebar a {
-            text-decoration: none;
-            color: rgb(0, 36, 128);
-            padding: 15px 30px;
-            transition: background-color 0.3s, padding-left 0.3s;
-            font-size: 18px;
-        }
-
-        .sidebar a:hover {
-            background-color: #f0f4f8;
-            padding-left: 40px;
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 270px;
-            padding: 40px;
-            transition: margin-left 0.3s;
-            overflow-y: auto;
-        }
-
-        .main-content h2 {
-            margin-top: 0;
-            color: rgb(0, 36, 128);
-            font-size: 28px;
-        }
-
-        /* Listings Table */
-        .listings-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .listings-table th, .listings-table td {
-            border: 1px solid #ddd;
-            padding: 15px;
-            text-align: left;
-            font-size: 16px;
-        }
-
-        .listings-table th {
-            background-color: #f0f4f8;
-            color: rgb(0, 36, 128);
-        }
-
-        .listings-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .listings-table tr:hover {
-            background-color: #e6f7ff;
-        }
-
-        /* Buttons */
-        .btn {
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .btn-edit {
-            background-color: #00aab3;
-            color: white;
-        }
-
-        .btn-edit:hover {
-            background-color: #008f99;
-            transform: scale(1.05);
-        }
-
-        .btn-delete {
-            background-color: #ff7070;
-            color: white;
-        }
-
-        .btn-delete:hover {
-            background-color: #ff4c4c;
-            transform: scale(1.05);
-        }
-
-        .add-listing {
-            background-color: #00aab3;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            transition: background-color 0.3s, transform 0.3s;
-            font-size: 16px;
-        }
-
-        .add-listing:hover {
-            background-color: #008f99;
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #ffffff;
-            color: rgb(0, 36, 128);
-            text-align: center;
-            font-size: 16px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 200px;
-            }
-
-            .main-content {
-                margin-left: 220px;
-                padding: 20px;
-            }
-
-            .listings-table th, .listings-table td {
-                padding: 10px;
-                font-size: 14px;
-            }
-
-            .btn {
-                padding: 8px 12px;
-                font-size: 13px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .sidebar {
-                display: none;
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding: 15px;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            header h1 {
-                margin-bottom: 10px;
-            }
-
-            .btn {
-                padding: 6px 10px;
-                font-size: 12px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>Admin Dashboard</h1>
-        <div>
-            <button class="home" onclick="window.location.href='/'">Home</button>
-            <button class="logout">Logout</button>
-        </div>
-    </header>
+    <%- include('includes/header') %>
 
-    <!-- Sidebar Section -->
     <div class="sidebar">
         <a href="#dashboard">Dashboard</a>
-        <a href="#listings">Listings Management</a>
+        <a href="#listings">Apartments Management</a>
         <a href="#users">Users Management</a>
-        <a href="#settings">Settings</a>
     </div>
 
-    <!-- Main Content Area -->
     <div class="main-content">
         <section id="dashboard">
             <h2>Dashboard</h2>
-            <!-- Dashboard content goes here -->
         </section>
 
         <section id="listings">
-            <h2>Listings Management</h2>
-            <button class="add-listing"><i class="fas fa-plus-circle"></i> Add New Listing</button>
-
-            <!-- Listings Table -->
+            <h2>Apartments Management</h2>
+            
             <table class="listings-table">
                 <thead>
                     <tr>
@@ -271,23 +33,52 @@
                         <th>Location</th>
                         <th>Price per Night</th>
                         <th>Max Guests</th>
-                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="listingsTableBody">
+                    <% for (let apartment of apartmentList) { %>
+                        <tr>
+                            <td><%=apartment.name%></td>
+                            <td> <%=apartment.location.city%> ,<%=apartment.location.country%></td>
+                            <td><%=apartment.price%></td>
+                            <td><%=apartment.maxGuests%></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+                <br>
+                <button class="add-listing"><i class="fas fa-plus-circle"></i> Add New Listing</button>
+        </section>
+        <br>
+        <section id="users">
+            <h2>Users Management</h2>
+            <table class="listings-table">
+                <thead>
+                    <tr>
+                        <th>username</th>
+                        <th>email</th>
+                        <th>full name</th>
+                        <th>is host</th>
+                        <th>is admin</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="listingsTableBody">
-                    <!-- Listings will be populated here -->
+                    <% for (let user of usersList) { %>
+                        <tr>
+                            <td><%=user.username%></td>
+                            <td> <%=user.email%></td>
+                            <td><%=user.firstName%> <%=user.lastName%></td>
+                            <td><%=user.isHost%></td>
+                            <td><%=user.isAdmin%></td>
+                            <td><form method="POST" action="/api/users/delete/<%=user.id%>" >
+                                <button type="submit">delete</button>
+                            </form></td>
+                        </tr>
+                    <% } %>
                 </tbody>
             </table>
         </section>
-
-        <section id="users">
-            <h2>Users Management</h2>
-            <!-- Users management content goes here -->
-        </section>
-
-        <section id="settings">
-            <h2>Settings</h2>
-            <!-- Settings content goes here -->
-        </section>
-    </
+        </div>
+        <%- include('includes/footer') %>
+    </body>

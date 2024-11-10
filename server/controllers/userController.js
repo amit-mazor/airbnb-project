@@ -31,7 +31,7 @@ const updateUser = async (req, res) => {
 const deleteUser = async (req, res) => {
   try {
     await userService.delete(req.params.id);
-    res.status(204).send();
+    res.status(204).redirect('/admin');
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

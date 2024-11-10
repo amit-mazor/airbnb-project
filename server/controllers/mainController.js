@@ -1,5 +1,6 @@
 const apartmentService = require('../services/apartmentService')
 const ordersService= require('../services/orderService')
+const userService= require('../services/userService')
 exports.getMain = (req, res, next) => {
     apartmentService.getAll().then(result=>{
         res.render('index', {
@@ -48,10 +49,15 @@ exports.getError = (req, res, next) => {
 exports.getAdmin = (req, res, next) => {
   // Check if the user is an admin
   if (req.session.user && req.session.user.isAdmin) {
-      res.render('admin', {
-          pageTitle: 'Admin Dashboard',
-          user: req.session.user
-      });
+      apartmentService.getAll().then(apartments=>{
+        userService.getAll().then(users=>{
+          res.render('admin', {
+            pageTitle: 'Main Page',
+            apartmentList:  apartments,
+            usersList:  users,
+            user: req.session.user
+          })});
+        })
   } else {
       res.redirect('/error'); // Redirect to error page if not admin
   }

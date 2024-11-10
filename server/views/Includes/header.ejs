@@ -1,9 +1,9 @@
 <nav class="mainNav">
     <% if (user ) { %>
+        <a href="/logout">Logout</a>
         <% if (user.isAdmin ) { %>
             <a href="/admin">Admin</a>
         <%}%>
-        <a href="/logout">Logout</a>
         <a href="/orders">Orders</a>
     <%}%>
     <% if (!user) { %>
