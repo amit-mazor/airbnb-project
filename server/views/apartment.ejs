@@ -87,7 +87,7 @@
                             </ul>
                         </div>
                         <div class="PageHeader">
-                            <% if (user && (apartment.host == user._id || user.isAdmin)) { %>
+                            <% if (user && (apartment.host == user._id)) { %>
                                 <form method="POST" action="/api/apartments/update/<%=apartment._id%>" >
                                     <input type="text" id="name" name="name" value="<%=apartment.name%>"/>
                                     beds :<input type="number" id="beds" name="beds" value="<%=apartment.beds%>"/>
