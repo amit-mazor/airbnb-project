@@ -46,15 +46,6 @@ nav a:hover {
     margin:auto;
     width:850px;
 }
-.welcome{
-    display:block;
-    max-width:960px;
-    padding:15px;
-    font-size:30px;
-    margin:20px;
-    text-shadow: -2px 1px 4px gray;
-}
-
 .gallery {
     width: 100%;
 }
@@ -129,20 +120,23 @@ ul.nav li a:hover {
     text-decoration: underline gray;
 }
 .welcome h1{
-    color:green;
+    color:rgb(0, 36, 128);
     display: inline;
     
 }
-.welcome{
-    display:block;
-    max-width:960px;
-    padding:15px;
-    font-size:30px;
-    margin:20px;
-}
+.welcome {
+    text-align: center;          /* Center the text inside the container */
+    margin: 20px auto;           /* Center the container itself */
+    font-size: 30px;             /* Maintain existing font size */
+    width: 100%;            /* Control the width of the container */
+    padding: 5px 0;               /* Provide some padding for space */
+    color: rgb(0, 36, 128);      /* Set text color */
+    text-shadow: -2px 1px 4px gray; /* Apply text shadow */
+  }
+
 .searchbox{
     width: 100%;
-    padding:20px;
+    padding:5px;
 }
  .SubSearch{
      width:50%;
@@ -509,8 +503,74 @@ img.PageImage{
     color: #00BFFF;
     content: '🌧️';
     }
-    
-    
+    /* Styling for Centering and Enhancing the Search Bar */
+#searchSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Take half of the viewport height to center vertically */
+    text-align: center;
+  }
+  
+  #searchForm {
+    display: flex;
+    gap: 10px; /* Spacing between input and button */
+  }
+  
+  #searchQuery {
+    width: 400px;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #searchButton {
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: #00aab3;
+    ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #searchButton:hover {
+    background-color: #00aab3;
+  }
+  
+  /* Styling for Search Results */
+  #resultsSection {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .apartment {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px auto;
+    width: 60%;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  #apartmentResults {
+    margin-top: 20px;        /* Add some spacing above the results */
+    padding: 10px;           /* Add padding for some space around the text */
+    width: 80%;              /* Set width to ensure it doesn’t take the entire page width */
+    margin-left: auto;       /* Center the results container */
+    margin-right: auto;
+  }
+  
+  .apartment {
+    border: 1px solid #ccc;  /* Add a light border to each result */
+    padding: 15px;           /* Padding inside each apartment result */
+    margin-bottom: 15px;     /* Spacing between individual results */
+    border-radius: 5px;      /* Rounded corners for each apartment box */
+    background-color: #f9f9f9; /* Light background for visibility */
+  }
+  
 
 
 @media only screen and (max-width: 960px) {

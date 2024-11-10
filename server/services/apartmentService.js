@@ -2,15 +2,24 @@
 const Apartment = require('../models/apartment');
 const mongoose = require('mongoose');
 
+
 const getAll = async (query) => {
   const filter = {};
-  if(query){
-    const { city, price, guests } = query;
-    if (city) filter['location.city'] = city;
-    if (price) filter.price = { $lte: price };
-    if (guests) filter.maxGuests = { $gte: guests };
-  } 
-  return Apartment.find(filter);
+  if (query && query.searchQuery) {
+    const searchRegex = new RegExp(query.searchQuery, 'i'); // Create a case-insensitive regex
+    filter.$or = [
+      { 'location.city': searchRegex },
+      { 'location.country': searchRegex },
+      { name: searchRegex }
+    ];
+  }
+
+  try {
+    return await Apartment.find(filter);
+  } catch (error) {
+    console.error("Error fetching apartments:", error);
+    throw new Error("Error fetching apartments.");
+  }
 };
 
 const getApartmentById = async (id) => {

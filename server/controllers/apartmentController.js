@@ -2,11 +2,14 @@
 const apartmentService = require('../services/apartmentService');
 
 const getAllApartments = async (req, res) => {
+  console.log('Received query:', req.query); // Log the query to ensure it's being passed correctly
   try {
     const apartments = await apartmentService.getAll(req.query);
-    res.status(200).json(apartments);
+    console.log('Found apartments:', apartments); // Log the apartments found
+    res.render('results', { apartments }); // Render the results.ejs view with the apartments data
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error('Error fetching apartments:', error.message);
+    res.status(500).render('results', { apartments: [], error: error.message });
   }
 };
 
@@ -57,11 +60,30 @@ const getHostApartments = async (req, res) => {
   }
 };
 
+const searchApartments = async (req, res) => {
+  try {
+    // Get the search query from the request
+    const searchQuery = req.query.searchQuery || '';
+
+    // Use the service layer to get apartments based on the search query
+    const apartments = await apartmentService.getAll({ searchQuery });
+
+    // Render the results.ejs view, passing the apartments data and setting error to null
+    res.render('results', { apartments, error: null });
+  } catch (err) {
+    console.error('Error fetching apartments:', err.message);
+    // Render the results.ejs view with an empty list of apartments and the error message
+    res.status(500).render('results', { apartments: [], error: err.message });
+  }
+};
+
+
 module.exports = {
   getAllApartments,
   createApartment,
   updateApartment,
   deleteApartment,
   getApartmentById,
-  getHostApartments
+  getHostApartments,
+  searchApartments
 };

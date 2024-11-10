@@ -12,21 +12,21 @@
                 <h1><% if (user) { %>
                     <%=user.firstName%>,
                     <% }%>
-                    Looking For Your Next Adventure?</h1>
+                    Your next adventure is here!</h1>
             </div>  
-            <div class="searchContainer">
-                <div class="searchbar">
-                    <div class="SubSearch">
-                        <input type="search" class="searchbox"
-                            placeholder="City Name"/>
-                    </div>
-                    <div class="SubSearch">
-                        <input type="number" min="0" class="searchbox"
-                            placeholder="Number Of Guests"/>
-                    </div>
-                </div>
-            </div>
+            
+            <section id="searchSection">
+                <form id="searchForm" method="GET" action="/api/apartments/search">
+                    <input type="text" id="searchQuery" name="searchQuery" placeholder="Search by city, country, or apartment name" />
+                    <button type="submit" id="searchButton">Search</button>
+                  </form>
+            
+              <!-- Search Results Section -->
+              <section id="resultsSection">
+                <div id="apartmentResults"></div>
+              </section>            
         </header>
+
         <main class="myContainer">
                 <div class="apartments">
                     <% if (apartmentList.length > 0) { %>

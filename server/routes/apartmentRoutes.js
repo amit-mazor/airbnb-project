@@ -1,5 +1,3 @@
-// routes/apartmentRoutes.js
-
 const express = require('express');
 const router = express.Router();
 const apartmentController = require('../controllers/apartmentController');
@@ -9,6 +7,7 @@ router.get('/', apartmentController.getAllApartments);            // GET /api/ap
 router.post('/', apartmentController.createApartment);            // POST /api/apartments - Create a new apartment
 router.put('/:id', apartmentController.updateApartment);          // PUT /api/apartments/:id - Update apartment by ID
 router.delete('/:id', apartmentController.deleteApartment);       // DELETE /api/apartments/:id - Delete apartment by ID
-router.get('/:username', apartmentController.getHostApartments);  // GET /api/apartments/:username - Get all apartments of a speicific host 
+router.get('/host/:username', apartmentController.getHostApartments);  // GET /api/apartments/host/:username - Get all apartments of a specific host 
+router.get('/search', apartmentController.searchApartments);
 
 module.exports = router;
