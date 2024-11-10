@@ -2,14 +2,16 @@
 const apartmentService = require('../services/apartmentService');
 
 const getAllApartments = async (req, res) => {
-  console.log('Received query:', req.query); // Log the query to ensure it's being passed correctly
   try {
     const apartments = await apartmentService.getAll(req.query);
-    console.log('Found apartments:', apartments); // Log the apartments found
-    res.render('results', { apartments }); // Render the results.ejs view with the apartments data
+    res.render('index', {
+      pageTitle: 'Main Page',
+      apartmentList:  apartments,
+      user: req.session.user
+    });
   } catch (error) {
     console.error('Error fetching apartments:', error.message);
-    res.status(500).render('results', { apartments: [], error: error.message });
+    res.status(500).render('error');
   }
 };
 

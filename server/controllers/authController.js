@@ -41,5 +41,10 @@ const signIn = async (req, res) => {
     res.redirect('/error');
   }
 };
+const signOut = async (req,res)=> {
+  req.session.user=null;
+  req.session.token=null;
+  res.status(200).redirect('/');
+}
 
-module.exports = { signUp, signIn };
+module.exports = { signUp, signIn, signOut };

@@ -14,17 +14,16 @@
                     <% }%>
                     Your next adventure is here!</h1>
             </div>  
-            
             <section id="searchSection">
-                <form id="searchForm" method="GET" action="/api/apartments/search">
-                    <input type="text" id="searchQuery" name="searchQuery" placeholder="Search by city, country, or apartment name" />
-                    <button type="submit" id="searchButton">Search</button>
+                <form id="searchForm" method="GET" action="/"  class="searchContainer">
+                    <div class="searchbar">
+                        <div class="SubSearch">
+                            <input type="text" id="searchQuery" class="searchbox" name="searchQuery" placeholder="Search by city, country, or apartment name" />
+                        </div>
+                        <button type="submit" id="searchButton" class="searchbutton">Search</button>
+                    </div>
                   </form>
-            
-              <!-- Search Results Section -->
-              <section id="resultsSection">
-                <div id="apartmentResults"></div>
-              </section>            
+            </section>    
         </header>
 
         <main class="myContainer">
