@@ -79,6 +79,16 @@ const searchApartments = async (req, res) => {
   }
 };
 
+const getListingsByCity = async (req, res) => {
+  try {
+    const listingsByCity = await apartmentService.getListingsCountByCity();
+    res.status(200).json(listingsByCity);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
 
 module.exports = {
   getAllApartments,
@@ -87,5 +97,6 @@ module.exports = {
   deleteApartment,
   getApartmentById,
   getHostApartments,
-  searchApartments
+  searchApartments,
+  getListingsByCity
 };
