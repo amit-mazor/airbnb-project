@@ -88,6 +88,14 @@ const getListingsByCity = async (req, res) => {
   }
 };
 
+const getPriceRangeData = async (req, res) => {
+  try {
+    const priceRangeData = await apartmentService.getPriceRangeCount();
+    res.status(200).json(priceRangeData);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
 
 module.exports = {
@@ -98,5 +106,6 @@ module.exports = {
   getApartmentById,
   getHostApartments,
   searchApartments,
-  getListingsByCity
+  getListingsByCity,
+  getPriceRangeData
 };

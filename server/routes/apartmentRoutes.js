@@ -10,6 +10,7 @@ router.delete('/:id', apartmentController.deleteApartment);       // DELETE /api
 router.get('/host/:username', apartmentController.getHostApartments);  // GET /api/apartments/host/:username - Get all apartments of a specific host 
 router.get('/search', apartmentController.searchApartments);
 router.get('/listings-by-city', apartmentController.getListingsByCity);
-
+router.get('/priceRangeData', apartmentController.getPriceRangeData);
+router.get('/price-range', apartmentController.getPriceRangeData);
 
 module.exports = router;

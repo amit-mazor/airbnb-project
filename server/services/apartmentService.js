@@ -54,6 +54,28 @@ const getListingsCountByCity = async () => {
     throw new Error('Error while fetching listings count by city');
   }
 };
+const getPriceRangeCount = async () => {
+  try {
+    const priceRanges = await Apartment.aggregate([
+      {
+        $match: { price: { $gte: 200, $lte: 1000 } } // Filter for apartments within the $200-$1000 range
+      },
+      {
+        $bucket: {
+          groupBy: "$price",
+          boundaries: [200, 300, 400, 500, 600, 700, 800, 900, 1000], // Define boundaries for the ranges
+          default: "1000+", // Apartments above 1000 will be grouped here if they exist
+          output: {
+            count: { $sum: 1 }
+          }
+        }
+      }
+    ]);
+    return priceRanges;
+  } catch (error) {
+    throw new Error('Error while fetching price range data');
+  }
+};
 module.exports = {
   getAll,
   getApartmentById,
@@ -61,5 +83,6 @@ module.exports = {
   update,
   delete: deleteApartment,
   getApartmentByHost,
-  getListingsCountByCity
+  getListingsCountByCity,
+  getPriceRangeCount
 };

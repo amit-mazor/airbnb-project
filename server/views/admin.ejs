@@ -27,7 +27,11 @@
                 <canvas id="listingsChart"></canvas>
             </div>
         </section>
-
+        <section>
+            <h3>Apartment Counts by Price Range ($200 - $1000)</h3>
+            <canvas id="priceRangeChart"></canvas>
+          </section>
+          
         <section id="listings">
             <h2>Apartments Management</h2>
         
@@ -160,5 +164,77 @@
             alert('Add Listing functionality to be implemented');
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        async function renderPriceRangeChart() {
+          try {
+            const response = await fetch('/api/apartments/priceRangeData');
+            const data = await response.json();
+            console.log("Fetched Data:", data); // Log data from the API
+      
+            // Define the labels for each price range
+            const labels = ['$200-$300', '$300-$400', '$400-$500', '$500-$600', '$600-$700', '$700-$800', '$800-$900', '$900-$1000'];
+            
+            // Initialize counts array with 0s for each range
+            const counts = new Array(labels.length).fill(0);
+      
+            // Map the fetched data to the correct index in the counts array
+            data.forEach(item => {
+              const price = item._id;
+              const count = item.count;
+      
+              if (price >= 200 && price < 300) counts[0] += count;
+              else if (price >= 300 && price < 400) counts[1] += count;
+              else if (price >= 400 && price < 500) counts[2] += count;
+              else if (price >= 500 && price < 600) counts[3] += count;
+              else if (price >= 600 && price < 700) counts[4] += count;
+              else if (price >= 700 && price < 800) counts[5] += count;
+              else if (price >= 800 && price < 900) counts[6] += count;
+              else if (price >= 900 && price <= 1000) counts[7] += count;
+            });
+      
+            console.log("Labels:", labels);  // Log labels to ensure they are correct
+            console.log("Counts:", counts);  // Log counts to check data accuracy
+      
+            const ctx = document.getElementById('priceRangeChart').getContext('2d');
+            new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: labels,
+                datasets: [{
+                  label: 'Count of Apartments',
+                  data: counts,
+                  backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                  borderColor: 'rgba(75, 192, 192, 1)',
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                responsive: true,
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    title: {
+                      display: true,
+                      text: 'Number of Apartments'
+                    }
+                  },
+                  x: {
+                    title: {
+                      display: true,
+                      text: 'Price Ranges ($)'
+                    }
+                  }
+                }
+              }
+            });
+          } catch (error) {
+            console.error('Error fetching price range data:', error);
+          }
+        }
+      
+        document.addEventListener('DOMContentLoaded', renderPriceRangeChart);
+      </script>
+      
 </body>
 </html>
