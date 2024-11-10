@@ -11,6 +11,6 @@ route.get('/register', mainController.getRegister);
 route.get('/error', mainController.getError);
 route.get('/orders', mainController.getOrders);
 route.get('/logout', authController.signOut);
-
+route.get('/admin', mainController.getAdmin);
 
 module.exports = route ;
