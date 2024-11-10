@@ -9,5 +9,7 @@ router.put('/:id', apartmentController.updateApartment);          // PUT /api/ap
 router.delete('/:id', apartmentController.deleteApartment);       // DELETE /api/apartments/:id - Delete apartment by ID
 router.get('/host/:username', apartmentController.getHostApartments);  // GET /api/apartments/host/:username - Get all apartments of a specific host 
 router.get('/search', apartmentController.searchApartments);
+router.get('/listings-by-city', apartmentController.getListingsByCity);
+
 
 module.exports = router;

@@ -43,12 +43,23 @@ const getApartmentByHost = async (userId) => {
   return await Apartment.find({ host: new mongoose.Types.ObjectId(userId) }).exec();
 }
 
-
+const getListingsCountByCity = async () => {
+  try {
+    const listings = await Apartment.aggregate([
+      { $group: { _id: "$location.city", count: { $sum: 1 } } },
+      { $sort: { count: -1 } }
+    ]);
+    return listings;
+  } catch (error) {
+    throw new Error('Error while fetching listings count by city');
+  }
+};
 module.exports = {
   getAll,
   getApartmentById,
   create,
   update,
   delete: deleteApartment,
-  getApartmentByHost
+  getApartmentByHost,
+  getListingsCountByCity
 };
