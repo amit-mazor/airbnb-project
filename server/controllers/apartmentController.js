@@ -37,8 +37,9 @@ const createApartment = async (req, res) => {
 
 const updateApartment = async (req, res) => {
   try {
+    console.log(req.body)
     const updatedApartment = await apartmentService.update(req.params.id, req.body);
-    res.status(200).json(updatedApartment);
+    res.status(200).redirect('/apartment/'+req.params.id);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
